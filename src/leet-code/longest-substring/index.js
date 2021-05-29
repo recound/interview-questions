@@ -15,10 +15,16 @@ function longestSubstring(s) {
                 maxLength = Math.max(length, maxLength);
                 leftIndex = dict[s[i]] + 1
                 length = i - leftIndex + 1;
+                dict[s[i]] = i;
+            } else {
+                length = length + 1;
+                dict[s[i]] = i;
+                maxLength = Math.max(length, maxLength)
             }
         } else {
             dict[s[i]] = i;
             length = length + 1;
+            maxLength = Math.max(length, maxLength);
         }
     }
     return Math.max(maxLength, length);
