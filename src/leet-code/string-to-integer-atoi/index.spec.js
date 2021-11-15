@@ -1,5 +1,5 @@
-// const { myAtoi } = require('./index');
-const myAtoi = parseInt
+const { myAtoi } = require('./index');
+
 describe('myAtoi test', () => {
     it('General cases', () => {
         expect(myAtoi('0')).toBe(0);
