@@ -47,4 +47,25 @@ function traverseTree(tree) {
 }
 
 
-traverseTree(tree1)
+// traverseTree(tree1)
+
+function bfs(tree) {
+    let queue = [];
+    queue.push([tree, 0]);
+    while (queue.length !== 0) {
+        const [[first, level], ...rest] = queue;
+        queue = rest;
+
+        // Visit node:
+        console.log("-", first.val, level);
+
+        if (first.left) {
+            queue.push([first.left, level + 1]);
+        }
+        if (first.right) {
+            queue.push([first.right, level + 1]);
+        }
+    }
+}
+
+bfs(tree1)
